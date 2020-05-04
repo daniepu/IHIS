@@ -1,0 +1,53 @@
+.row{
+    padding: 10px;
+}
+.card {
+    position: relative;
+    height: 90%;
+    padding: 20px;
+    padding-bottom: 40px;
+    background-color: #23282d;
+
+}
+.card h1 {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #bcc1c5;
+    text-align: center;
+  }
+ .card img
+{
+    height: 150px;
+    width: 250px;
+
+ } 
+.form {
+    position: absolute;
+    margin: 0 auto;
+    background-color: #23282d;    
+    transform: translate(-50%, -50%);
+}
+input {
+width: 100%;
+margin-bottom: 10px;
+border: none;
+outline: none;
+padding: 10px 10px 10px 10px ;
+background-color: #3c4146;
+color: #f8f8f2;
+font-size: 18px;
+line-height: 1.5em;
+border-radius: 4px;
+transition: all .5s ease;
+}
+label
+{
+    font-size: 16px; 
+    color: #bcc1c5;
+}
+.btn-link
+{
+    text-align: right; 
+    color: #bcc1c5;
+}

@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/stuff" href="#" class="btn btn link">
+    <i class="fa fa-arrow-circle-o-left"> </i>back to home
+    </a>
+  </div>
+  <div class="col-md-6">
+  </div>
+</div>
+  <div class="card">
+    <h3 class="card-header">
+      edit Settings
+    </h3>
+    <div class="card-body">
+      <form (submit)="onSubmit()">
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+          <label> disable auth on add </label>
+          <input type="checkbox" name="disableAuthOnAdd" 
+          [checked]="settings.disableAuthOnAdd" (change)="settings.disableAuthOnAdd = !settings.disableAuthOnAdd">
+        </div>
+        <div class="form-group">
+          <label>disable auth on edit</label>
+          <input type="checkbox" name="disableAuthOnEdit" 
+          [checked]="settings.disableAuthOnEdit" (change)="settings.disableAuthOnEdit = !settings.disableAuthOnEdit">
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary btn-block">
+      </form>
+
+    </div>
+  </div>

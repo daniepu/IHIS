@@ -1,0 +1,125 @@
+
+  <div class="row">
+    <div class="col-md-6">
+      <a routerLink="/stuff" href="#" class="btn btn link">
+      <i class="fa fa-arrow-circle-o-left"> </i>back to home
+      </a>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+  <div class="conteiner">
+    <div class="card"> 
+      <div class="card-header"> Edit user </div>
+      <div class="card-body">
+        <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+          <div class="form-group">
+            <label for="firstName"> firstName </label>
+            <input type="text" class="form-control" 
+            [ngClass]="{'is-invalid':userfirstName.errors?.required && 
+            userfirstName.touched || userfirstName.errors?.minlength}"
+            [(ngModel)]="user.firstName" 
+            name="firstName" #userfirstName="ngModel"
+            minlength="2" required>
+
+            <div *ngIf="userfirstName.errors?.required && userfirstName.touched"
+            class="invalid-feedback"> first name is requierd </div>
+
+            <div *ngIf="userfirstName.errors?.minlength && userfirstName.touched"
+            class="invalid-feedback"> must be at least 2 charcters </div>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName"> lastName </label>
+            <input type="text" class="form-control" 
+            [ngClass]="{'is-invalid':userlastName.errors?.required && 
+            userlastName.touched || userlastName.errors?.minlength}"
+            [(ngModel)]="user.lastName" 
+            name="lastName" #userlastName="ngModel"
+            minlength="2" required>
+
+            <div *ngIf="userlastName.errors?.required && userlastName.touched"
+            class="invalid-feedback"> Last name is requierd </div>
+
+            <div *ngIf="userlastName.errors?.minlength && userlastName.touched"
+            class="invalid-feedback"> must be at least 2 charcters </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email"> email\username </label>
+            <input type="email" class="form-control" 
+            [ngClass]="{'is-invalid':useremail.errors?.required && 
+            useremail.touched || useremail.errors?.pattern}"
+            [(ngModel)]="user.email" 
+            name="email" #useremail="ngModel"
+            pattern= "\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+
+            <div *ngIf="useremail.errors?.required && useremail.touched"
+            class="invalid-feedback"> email is requierd </div>
+
+            <div *ngIf="useremail.errors?.pattern && useremail.touched"
+            class="invalid-feedback"> email is invalid </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone"> phone </label>
+            <input type="text" class="form-control" 
+            [ngClass]="{'is-invalid':userphone.errors?.required && 
+            userphone.touched || userphone.errors?.minlength}"
+            [(ngModel)]="user.phone" 
+            name="phone" #userphone="ngModel"
+            minlength="10" required>
+
+            <div *ngIf="userphone.errors?.required && userphone.touched"
+            class="invalid-feedback"> phone is requierd </div>
+
+            <div *ngIf="userphone.errors?.minlength && userphone.touched"
+            class="invalid-feedback"> phone is not a valid number </div>
+            </div>
+
+            <div class="form-group">
+              <label for="department"> department </label>
+              <input type="text" class="form-control" 
+              [ngClass]="{'is-invalid':userdepartment.errors?.required && 
+              userdepartment.touched || userdepartment.errors?.minlength}"
+              [(ngModel)]="user.department" 
+              name="department" #userdepartment="ngModel"
+              minlength="2" required>
+      
+              <div *ngIf="userdepartment.errors?.required && userdepartment.touched"
+              class="invalid-feedback"> department is requierd </div>
+      
+              <div *ngIf="userdepartment.errors?.minlength && userdepartment.touched"
+              class="invalid-feedback"> department is invalid </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password"> Password </label>
+            <input type="text" class="form-control" 
+            [ngClass]="{'is-invalid':userpassword.errors?.required && 
+            userpassword.touched || userpassword.errors?.minlength}"
+            [(ngModel)]="user.password" 
+            name="password" #userpassword="ngModel"
+            minlength="6" required>
+    
+            <div *ngIf="userpassword.errors?.required && userpassword.touched"
+            class="invalid-feedback"> password is requierd </div>
+    
+            <div *ngIf="userpassword.errors?.minlength && userpassword.touched"
+            class="invalid-feedback"> password is minimum 6 charecters </div>
+            
+          </div>
+
+          <div class="form-group">
+            <label for="auth"> authorization </label>
+            <input type="text" class="form-control" 
+
+            [(ngModel)]="user.auth" 
+            name="auth" #userauth="ngModel"
+            minlength="10" [disabled]="disableAuthOnEdit">
+
+        </div>
+        <input type="submit" value="submit" class="btn btn-primary btn-block">
+        </form>
+      </div>
+  </div>
+</div>
